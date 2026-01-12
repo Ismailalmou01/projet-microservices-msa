@@ -1,12 +1,11 @@
 package com.org.emprunt.controller;
 
 import java.util.List;
-
 import org.springframework.web.bind.annotation.*;
-
 import com.org.emprunt.DTO.EmpruntDetailsDTO;
 import com.org.emprunt.entities.Emprunter;
 import com.org.emprunt.service.EmpruntService;
+
 
 @RestController
 @RequestMapping("/emprunts")
@@ -23,6 +22,7 @@ public class EmpruntController {
             @PathVariable Long userId,
             @PathVariable Long bookId) {
 
+        // Le service s'occupe de tout : validation, MySQL et Kafka
         return service.createEmprunt(userId, bookId);
     }
 
